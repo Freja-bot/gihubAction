@@ -9,14 +9,12 @@ jobs:
     comment:
         runs-on: ubuntu-latest
         steps:
-            - name: "Dump Github context"
-              run: echo "Welcome ${{ toJson(github.event.issue.author_association) }} You have created issue number ${{ toJson(github.event.issue.number) }}"
             - name: Create comment
               uses: peter-evans/create-or-update-comment@v5
               with:
                 issue-number: ${{toJson(github.event.issue.number)}}
                 body: |
-                    This is a multi-line test comment
+                    Welcome ${{ toJson(github.event.issue.author_association) }} You have created issue number ${{ toJson(github.event.issue.number) }}
                     - With GitHub **Markdown** :sparkles:
                     - Created by [create-or-update-comment][1]
 
