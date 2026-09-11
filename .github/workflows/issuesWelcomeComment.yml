@@ -1,0 +1,13 @@
+name: Issue welcome commenter
+permissions:
+    issues: write
+on: 
+    issues:
+        types: [opened]
+
+jobs:
+    comment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Dump Github context"
+              run: echo "${{ Github.context }}"
