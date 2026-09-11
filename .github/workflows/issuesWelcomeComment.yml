@@ -10,4 +10,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Dump Github context"
-              run: echo "${{ toJson(github.event) }}"
+              run: echo "Welcome ${{ toJson(github.event.issue.author_association) }} You have created issue number ${{ toJson(github.event.issue.number) }}"
